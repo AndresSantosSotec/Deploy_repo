@@ -32,7 +32,17 @@ services:
       - pgdata:/var/lib/postgresql/data
     networks:
       - web
-
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@asm.com
+      PGADMIN_DEFAULT_PASSWORD: admin123
+    ports:
+      - "8080:80"  # Accedes desde http://TU_DOMINIO:8080
+    networks:
+      - web
 volumes:
   pgdata:
 
