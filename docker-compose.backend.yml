@@ -3,7 +3,7 @@ version: '3.8'
 services:
   asm-backend:
     build:
-      context: ./blue-atlas-backend
+      context: ./blue_atlas_backend
       dockerfile: Dockerfile
     container_name: asm_backend
     restart: always
