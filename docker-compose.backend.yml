@@ -1,9 +1,10 @@
 version: '3.8'
 
 services:
-  laravel-backend:
+  asm-backend:
     build:
-      context: ./backend
+      context: ./blue-atlas-backend
+      dockerfile: Dockerfile
     container_name: asm_backend
     restart: always
     environment:
