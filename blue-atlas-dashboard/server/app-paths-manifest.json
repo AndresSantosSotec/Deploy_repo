@@ -1,0 +1,13 @@
+{
+  "/page": "app/page.js",
+  "/seguridad/permisos/page": "app/seguridad/permisos/page.js",
+  "/seguridad/2fa/page": "app/seguridad/2fa/page.js",
+  "/seguridad/usuarios/page": "app/seguridad/usuarios/page.js",
+  "/seguridad/dashboard/page": "app/seguridad/dashboard/page.js",
+  "/seguridad/accesos/page": "app/seguridad/accesos/page.js",
+  "/seguridad/auditoria/page": "app/seguridad/auditoria/page.js",
+  "/seguridad/politicas/page": "app/seguridad/politicas/page.js",
+  "/seguridad/roles/page": "app/seguridad/roles/page.js",
+  "/seguridad/sesiones/page": "app/seguridad/sesiones/page.js",
+  "/login/page": "app/login/page.js"
+}
