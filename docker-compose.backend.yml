@@ -21,7 +21,7 @@ services:
       - "9000"
 
   postgres:
-    image: postgres:14.18
+    image: postgres:16
     container_name: postgres_db
     restart: always
     environment:
