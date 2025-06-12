@@ -1,5 +1,5 @@
 # Etapa de build
-FROM node:18-alpine AS builder
+FROM node:20-alpine AS builder
 
 WORKDIR /app
 
@@ -19,7 +19,7 @@ RUN npx next --version
 RUN npm run build
 
 # Etapa de producción
-FROM node:18-alpine AS runner
+FROM node:20-alpine AS runner
 
 WORKDIR /app
 ENV NODE_ENV=production
