@@ -12,7 +12,8 @@ services:
     networks:
       - web
     expose:
-      - "80"
+      - "3000"
+
 
 networks:
   web:
