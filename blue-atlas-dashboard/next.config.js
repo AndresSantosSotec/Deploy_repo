@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // 1️⃣ Añadido para generar el build standalone
+  output: 'standalone',
+
+  // tu configuración existente
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -7,7 +11,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true, // lo puedes ajustar si usas un loader
+    unoptimized: true, // si no usas loader personalizado
   },
   experimental: {
     webpackBuildWorker: true,
@@ -17,10 +21,6 @@ const nextConfig = {
       ? process.env.ALLOWED_DEV_ORIGINS.split(',')
       : [],
   },
-
-  // 🔴 IMPORTANTE: NO pongas output: 'export'
-  // Esto rompe rutas dinámicas como /firma/student-details/[id]
-  // output: 'export', ← ¡NO LO USES AQUÍ!
 }
 
 // Cargar configuración extra opcional
@@ -31,6 +31,7 @@ try {
   // archivo opcional
 }
 
+// Función de merge (la dejas igual)
 function mergeConfig(base, override) {
   for (const key in override) {
     if (typeof base[key] === 'object' && !Array.isArray(base[key])) {
