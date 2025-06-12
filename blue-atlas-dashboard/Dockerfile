@@ -4,8 +4,7 @@ FROM node:18-alpine AS builder
 WORKDIR /app
 
 # Usar un mirror confiable para evitar errores 503
-RUN npm config set registry https://registry.npmjs.cf
-
+RUN npm config set registry https://registry.npmjs.org
 # Copiar archivos de definición de dependencias
 COPY package.json package-lock.json ./
 
