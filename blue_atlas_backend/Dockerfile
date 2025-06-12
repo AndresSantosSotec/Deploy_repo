@@ -1,6 +1,6 @@
-FROM php:8.1-fpm
+FROM php:8.1-apache
 
-# Instalar extensiones del sistema necesarias
+# Instalar extensiones
 RUN apt-get update && apt-get install -y \
     git \
     unzip \
@@ -18,18 +18,14 @@ RUN apt-get update && apt-get install -y \
 # Instalar Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-# Crear directorio de trabajo
-WORKDIR /var/www
-
-# Copiar archivos y ejecutar composer
-COPY composer.json composer.lock ./
-RUN composer install --no-dev --prefer-dist --no-scripts --no-progress --optimize-autoloader
-
-# Copiar el resto del código
+# Copiar proyecto
+WORKDIR /var/www/html
 COPY . .
 
-# Asignar permisos
-RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
+# Asignar permisos a Laravel
+RUN chown -R www-data:www-data storage bootstrap/cache
 
-EXPOSE 9000
-CMD ["php-fpm"]
+# Puerto HTTP
+EXPOSE 80
+
+CMD ["apache2-foreground"]

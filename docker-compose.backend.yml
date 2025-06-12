@@ -18,7 +18,7 @@ services:
     networks:
       - web
     expose:
-      - "9000"
+      - "80"  # Exponer el puerto 8000 para el backend
 
   postgres:
     image: postgres:16
