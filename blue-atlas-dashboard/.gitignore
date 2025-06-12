@@ -5,10 +5,10 @@
 
 # next.js
 /.next/
-/out/
+
 
 # production
-/build
+
 
 # debug
 npm-debug.log*
