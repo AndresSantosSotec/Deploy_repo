@@ -1,12 +1,14 @@
 services:
   asm-frontend:
-    image: andressgondev05/asm_frontend:latest
+    build:
+      context: ./blue-atlas-dashboard
+      dockerfile: Dockerfile
     container_name: frontend_asm
     restart: always
     environment:
       - VIRTUAL_HOST=dev.sistemasumgcoban.com.gt
       - LETSENCRYPT_HOST=dev.sistemasumgcoban.com.gt
-      - LETSENCRYPT_EMAIL=pablo2095andres@gmail.com
+      - LETSENCRYPT_EMAIL=pablo2905andres@gmail.com
     networks:
       - web
     expose:
